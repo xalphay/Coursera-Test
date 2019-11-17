@@ -1,62 +1,24 @@
 <html>
     <head>
-        <title>BOE, Display Everywhere!</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Test02, BOE, Display Everywhere!</title>
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
         <style>
             *{
                 box-sizing: border-box;
             }
             body{
-                margin: 0;
+                margin:0px;
+                padding: 0px;
+                border: 0px;
             }
             h1{
                 display: none;
             }
-            .container{
-                position:relative;
-            }
-            .col-4 {
-                position: relative;
-                float:left;
-                width:25%;
-            }
-            .col-6{
-                float:left;
-                width:16.66%;
-
-            }
             img{
-                width:100%;
-                height: 158px;
-                display: block;
-                object-fit:cover;
-                object-position: 50% 50%;
-                /*
-                padding: 4px;
-                border-radius: 20px;
-                */
-                opacity: 1;
-            }
-            .middle {
-                transition: .5s ease;
-                opacity: 0;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                -ms-transform: translate(-50%, -50%)
-            }
-            .text {                
-                font-family: Arial, Helvetica, sans-serif;
-                color: rgb(0, 0, 0);
-                font-size: 80px;
-            }
-            .col-4:hover img {
-                opacity: 0.3;
-            }
-
-            .col-4:hover .middle {
-                opacity: 1;
+                float: left;
+                margin:0;
+                width:25%;
+                height:auto;
             }
         </style>
     </head>
@@ -64,33 +26,9 @@
         <h1>
             Demo page for BOE 23.1" shelf display
         </h1>
-        <div class="container">
-            <div class="col-4">
-                <img src="https://wallpapercave.com/wp/wp1828195.jpg">
-                <div class="middle">
-                    <div class="text">R55.99</div>
-                </div>
-            </div>
-            <div class="col-4">
-                <img  src="https://wallpaperaccess.com/full/281050.jpg">
-                <div class="middle">
-                        <div class="text">R65.99</div>
-                    </div>
-            </div>
-            <div class="col-4">
-                <img  src="https://giftacres.co.za/wp-content/uploads/2019/01/woolworths-logo.jpg">
-                <div class="middle">
-                        <div class="text">R75.99</div>
-                    </div>
-            </div>
-            <div class="col-4">
-                <img  src="https://wallpaperaccess.com/full/694388.jpg">
-                <div class="middle">
-                        <div class="text">R85.99</div>
-                    </div>
-            </div>
-
-        </div>
-
+        <img src="Cocacola.jpg">
+        <img src="Nike.jpg">
+        <img src="Woolworths.jpg">
+        <img src="Logitech.jpg">
     </body>
 </html>
