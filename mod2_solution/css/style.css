@@ -42,8 +42,12 @@ body{
     float:right;
     width:100px;
     font-size:125%;
+    margin:0px;
     text-align: center;
     border:1px black solid;
+    position: relative;
+    top:-1px;
+    left:1px;
 }
 #f1{
     background-color: blueviolet;
