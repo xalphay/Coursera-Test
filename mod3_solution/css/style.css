@@ -1,0 +1,45 @@
+.item{
+  background-color:grey;
+  padding: 10px;
+  margin: 0px auto 15px;
+}
+.intro{
+  padding: 5px;
+}
+@media (max-width: 767px) {
+  .item{
+    width:95%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .item{
+
+  }
+}
+
+@media (min-width: 992px) {
+/*   .col-md-4 {
+    height: 100%;
+    overflow: hidden;
+  }
+  .item{
+    height: 100%;
+  } */
+}
+.clearfix2{
+  clear:both;
+  width:1px;
+  height:1px;
+}
+.item>h3{
+  margin-top: 5px;
+  color: white;
+}
+/* .item a{
+  color: white;
+} */
+hr.visible-xs{
+  margin-top:1px;
+  margin-bottom: 1px;
+  width:80%;
+}
