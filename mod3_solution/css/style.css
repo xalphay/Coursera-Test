@@ -31,9 +31,20 @@
   width:1px;
   height:1px;
 }
+#header-nav .navbar-brand{
+  padding:5px;
+  text-align: center;
+}
+
+a>h1{
+  margin:auto 10px;
+  /* font-size:30px; */
+  font-size: 2em;
+}
 .item>h3{
   margin-top: 5px;
   color: white;
+  font-size:1.5em;
 }
 /* .item a{
   color: white;
@@ -42,4 +53,7 @@ hr.visible-xs{
   margin-top:1px;
   margin-bottom: 1px;
   width:80%;
+}
+h2.text-center{
+  font-size:1.8em;
 }
