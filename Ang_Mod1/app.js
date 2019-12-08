@@ -4,16 +4,20 @@
     .controller('LunchCheckController',LunchCheckController);
     LunchCheckController.$inject = ['$scope'];
     function LunchCheckController($scope){
-        $scope.lunch="Chicken,Sushi,Steak";
-        $scope.checkedMessage="We DO NOT consider and empty item, i.e., , , as an item towards to the count.";
+        $scope.lunch="";
+        $scope.checkedMessage="";
+        $scope.checkedColor="";
         $scope.checkItems=function(){
-            $scope.checkedMessage=countItems($scope.lunch);
+            var cR=countItems($scope.lunch)
+            $scope.checkedMessage=cR[0];
+            $scope.checkedColor=cR[1];
         };
     };
     function countItems(myLunch){
-        var msg="";
+        var msg=[];
         if (myLunch == ""){
-            msg="Please enter data first!, Remember that we DO NOT consider and empty item, i.e., , , as an item towards to the count."
+            msg[0]="Please enter data first!";
+            msg[1]="checked_red";
         }else{
             var items=myLunch.split(",");
             // console.log(items);
@@ -29,13 +33,17 @@
             // console.log(newItems.length);
             itemsCount=newItems.length;
             if (itemsCount==0){
-                msg="Please enter data first!, Remember that we DO NOT consider and empty item, i.e., , , as an item towards to the count.";
+                msg[0]="Please enter data first!";
+                msg[1]="checked_red";
             }else if(itemsCount<4){
-                msg="Enjoy!";
+                msg[0]="Enjoy!";
+                msg[1]="checked_green";
             }else{
-                msg="Too much!";
+                msg[0]="Too much!";
+                msg[1]="checked_green";
             }
         };
+        // console.log(msg);
         return msg;
     };
 })();

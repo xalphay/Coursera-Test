@@ -4,6 +4,7 @@
     <title>Lunch Checker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
     <style>
       .message { font-size: 1.3em; font-weight: bold; }
     </style>
@@ -21,12 +22,13 @@
             ng-model="lunch">
         </div>
         <div class="form-group">
+          We DO NOT consider and empty item, i.e., , , as an item towards to the count.<br>
           <button class="btn btn-default"
                   ng-click="checkItems()">
             Check If Too Much
           </button>
         </div>
-        <div class="form-group message">
+        <div class="form-group message {{checkedColor}}">
           {{checkedMessage}}
         </div>
    </div>
