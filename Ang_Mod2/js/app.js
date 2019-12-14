@@ -41,16 +41,14 @@
         service.getItems=function(){
             return items;
         };
-        var item={};
+        var item=[];
         service.buyItem=function(itemIndex){
-            item=tobuyitems[itemIndex];
-            boughtitems.push(item);
-            tobuyitems.splice(itemIndex,1);
+            item=tobuyitems.splice(itemIndex,1);
+            boughtitems.push(item[0]);
         };
         service.cancelItem=function(itemIndex){
-            item=boughtitems[itemIndex];
-            tobuyitems.push(item);
-            boughtitems.splice(itemIndex,1);
+            item=boughtitems.splice(itemIndex,1);
+            tobuyitems.push(item[0]);
         }
     };
 })();
