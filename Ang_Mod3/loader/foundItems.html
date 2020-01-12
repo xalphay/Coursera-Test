@@ -1,0 +1,23 @@
+<!-- <ul>
+    <li ng-repeat="item in list.items">
+        {{item.name}},{{item.short_name}},{{item.desc}}
+        <button ng-click="list.onRemove({index:$index});">Don't want this one!</button>
+    </li>
+</ul> -->
+<div class="col-lg-12">
+<table ng-if="list.items.length">
+    <tr>
+        <th>Short_Name</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Action!</th>
+    </tr>
+    <tr ng-repeat="item in list.items">
+        <td>{{item.short_name}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.desc}}</td>
+        <td><button ng-click="list.onRemove({index:$index});">Don't want this one!</button></td>
+    </tr>
+</table>
+<div class="error">Nothing Found!</div>
+</div>
