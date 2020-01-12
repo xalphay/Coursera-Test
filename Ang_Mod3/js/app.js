@@ -43,8 +43,8 @@
         // console.log('Controller instance is: ', controller);
         // console.log('Element is: ', element);
         scope.$watch('list.existed()',function(newValue,oldValue){
-            console.log('newValue',newValue);
-            console.log('oldValue',oldValue);
+            // console.log('newValue',newValue);
+            // console.log('oldValue',oldValue);
             if(newValue===true){
                 // console.log('Something Triggered #newValue true');
                 removeNothingFound();
@@ -69,6 +69,11 @@
         ctrl.NarrowItDown=function(){
             var MSS=MenuSearchService;
             var detailItems=[];
+            if (ctrl.keyWord===''){
+                ctrl.items=[];
+                // console.log('Value blank');
+            }
+            else{
             var promise=MSS.getMatchedMenuItems(ctrl.keyWord);
             promise.then(
                 function(response){
@@ -91,6 +96,7 @@
 
                 }
             );
+            };
         ctrl.removeItem=function(itemIndex){
             ctrl.items.splice(itemIndex,1);
         };
