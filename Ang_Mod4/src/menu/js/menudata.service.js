@@ -13,7 +13,7 @@
             var response = $http({
                 method:"GET",
                 url:categoriesURL,
-                timeout:800
+                timeout:10000
                 }).then(
                 function(response){
                     // console.log(response);
@@ -35,7 +35,7 @@
                 params:{
                     category:categoryShortName
                     },
-                timeout:800
+                timeout:10000
                 }).then(
                 function(response){
                     items=response.data;
