@@ -1,0 +1,25 @@
+<h2  id="menu-categories-title" class="text-center">My Info</h2>
+<div ng-hide="myinfoCtrl.signed" class="text-center">
+    Not Signed Up Yet. 
+    <a ui-sref="public.signup"  class="signup">Sign up Now!</a>
+</div>
+<div ng-if="myinfoCtrl.signed" class="container">
+  <div class="col-sm-12 text-right">
+    <div>{{myinfoCtrl.firstname}} {{myinfoCtrl.lastname}}</div>
+    <div>{{myinfoCtrl.email}}</div>
+    <div>{{myinfoCtrl.tel}}</div>
+  </div>
+  <div class="col-sm-5">
+    <div class="menu-item-photo">
+      <div>{{myinfoCtrl.favorite.short_name}}</div>
+      <img class="img-responsive" width="250" height="150" ng-src="{{myinfoCtrl.basePath}}/images/{{myinfoCtrl.favorite.short_name}}.jpg" alt="{{myinfoCtrl.favorite.name}}">
+    </div>
+  </div>
+  <div class="menu-item-description col-sm-7">
+    <h3 class="menu-item-title">{{myinfoCtrl.favorite.name}}</h3>
+    <p class="menu-item-details">{{myinfoCtrl.favorite.description}}</p>
+  </div>
+  <div class="col-sm-12 text-right">
+    <a ui-sref="public.signup" class="signup">Modify</a>
+  </div>
+</div>

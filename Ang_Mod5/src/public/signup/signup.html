@@ -1,0 +1,37 @@
+<h2 id="menu-categories-title" class="text-center">Sign Up</h2>
+<div class="container">
+    <form name='formSignUp' novalidate>
+        <div class="form-group">
+            <input ng-disabled="SignUpCtrl.signed" type="text" name="firstName" ng-model="SignUpCtrl.firstname" class="form-control" placeholder="First Name" required minlength="3">
+            <small class="form-text text-muted" ng-if="(formSignUp.firstName.$error.required || formSignUp.firstName.$error.minlength) && formSignUp.firstName.$touched">First Name must be at least 3 characters</small>
+        </div>
+        <div class="form-group">
+            <input ng-disabled="SignUpCtrl.signed" type="text" name="lastName" ng-model="SignUpCtrl.lastname" class="form-control" placeholder="Last Name" required min-length="3">
+            <small class="form-text text-muted" ng-if="(formSignUp.lastName.$error.required || formSignUp.lastName.$error.minlength) && formSignUp.lastName.$touched">Last Name must be at least 3 characters</small>
+        </div>
+        <div class="form-group">
+            <input ng-disabled="SignUpCtrl.signed" type="email" name="email" ng-model="SignUpCtrl.email" class="form-control" placeholder="Email" required>
+            <small class="form-text text-muted" ng-if="formSignUp.email.$invalid && formSignUp.email.$touched">Must be a valid email address</small>
+        </div>
+        <div class="form-group">
+            <input ng-disabled="SignUpCtrl.signed" type="text" name="tel" ng-model="SignUpCtrl.tel" class="form-control" placeholder="012-345-6789" pattern="(\d{3})-(\d{3})-(\d{4})">
+            <small class="form-text text-muted" ng-if="formSignUp.tel.$invalid && formSignUp.tel.$touched">Must be in the format ###-###-####</small>
+        </div>
+        <div class="form-group">
+            <input ng-disabled="SignUpCtrl.signed" type="text" name="favorite" ng-model="SignUpCtrl.favorite" class="form-control" placeholder="Favorite Dish" required minlength="1", ng-maxlength="3">
+            <small class="form-text text-muted" ng-if="(formSignUp.favorite.$error.minlength || formSignUp.favorite.$error.required) && formSignUp.favorite.$touched">Favorite must be at least 1 characters</small>
+            <small class="form-text text-muted" ng-if="formSignUp.favorite.$error.maxlength && formSignUp.favorite.$touched">Favorite must not be longer than 3 characters</small>
+            <small class="form-text text-muted" ng-hide="SignUpCtrl.signed">{{SignUpCtrl.validFav}}</small>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary btn-block" ng-hide="SignUpCtrl.signed" ng-disabled="formSignUp.$invalid" ng-click="SignUpCtrl.go()">Submit</button>
+        </div>
+        <div ng-if="SignUpCtrl.signed" class="form-group">
+            Dear {{SignUpCtrl.firstname}}, Your information has been saved!
+        </div>
+        <div class="form-group" ng-show="SignUpCtrl.signed">
+            <button  class="btn btn-primary btn-block" ng-click="SignUpCtrl.modify()">Modify</button>
+        </div>
+        
+    </form>
+</div>
